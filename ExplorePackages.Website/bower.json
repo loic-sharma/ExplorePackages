@@ -7,6 +7,8 @@
     "jquery-validation": "1.14.0",
     "jquery-validation-unobtrusive": "3.2.6",
     "jquery-ajax-unobtrusive": "v3.2.4",
-    "handlebars": "v4.0.11"
+    "handlebars": "v4.0.11",
+    "typeahead.js": "v0.11.1",
+    "typeahead.js-bootstrap3.less": "typeahead.js-bootstrap-css#1.2.1"
   }
 }

@@ -381,12 +381,29 @@
 
             var reportTemplateSource = $("#report-template").html();
             var reportTemplate = Handlebars.compile(reportTemplateSource);
+            
+            $packageId.typeahead(null, {
+                source: new Bloodhound({
+                    datumTokenizer: Bloodhound.tokenizers.obj.whitespace('value'),
+                    queryTokenizer: Bloodhound.tokenizers.whitespace,
+                    remote: {
+                        url: '/api/autocomplete?prerelease=true&semVerLevel=2.0.0&q=%QUERY',
+                        wildcard: '%QUERY',
+                        transform: function (resp) {
+                            return resp.data;
+                        },
+                        rateLimitWait: 100
+                    }
+                }),
+                limit: 10
+            });
 
             $reportTab.click(function () {
                 if ($reportTab.parent().hasClass("disabled")) {
                     return false;
                 }
             });
+
             $reportDataTab.click(function () {
                 if ($reportDataTab.parent().hasClass("disabled")) {
                     return false;
