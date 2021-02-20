@@ -131,6 +131,7 @@ namespace Knapcode.ExplorePackages.Worker
                     return await UpdateFindLatestLeafAsync(max);
                 case CatalogScanDriverType.FindPackageAssembly:
                 case CatalogScanDriverType.FindPackageAsset:
+                case CatalogScanDriverType.FindPackageItem:
                 case CatalogScanDriverType.FindPackageSignature:
                     return await UpdateCatalogLeafToCsvAsync(driverType, onlyLatestLeaves.GetValueOrDefault(true), max);
                 case CatalogScanDriverType.FindPackageFile:
@@ -395,6 +396,7 @@ namespace Knapcode.ExplorePackages.Worker
             { CatalogScanDriverType.FindPackageManifest, FlatContainer },
             { CatalogScanDriverType.FindPackageAsset, FindPackageFile },
             { CatalogScanDriverType.FindPackageAssembly, FindPackageFile },
+            { CatalogScanDriverType.FindPackageItem, FindPackageFile },
             { CatalogScanDriverType.FindPackageSignature, FindPackageFile },
         }.ToDictionary(x => x.Key, x => (IReadOnlyList<(string Name, Func<CatalogScanService, Task<DateTimeOffset>> GetValueAsync)>)x.Value.ToList());
 

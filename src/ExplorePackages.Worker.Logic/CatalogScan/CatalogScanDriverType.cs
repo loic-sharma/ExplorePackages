@@ -28,6 +28,11 @@
         FindPackageAsset,
 
         /// <summary>
+        /// Implemented by <see cref="FindPackageItem.FindPackageItemDriver"/>. Extracts metadata about each file in a package.
+        /// </summary>
+        FindPackageItem,
+
+        /// <summary>
         /// Implemented by <see cref="FindPackageSignature.FindPackageSignatureDriver"/>. Extracts information from each
         /// NuGet package signature, determining things like certificate issuers and whether the package is author signed.
         /// </summary>

@@ -4,6 +4,7 @@ using Knapcode.ExplorePackages.Worker.FindLatestPackageLeaf;
 using Knapcode.ExplorePackages.Worker.FindPackageAssembly;
 using Knapcode.ExplorePackages.Worker.FindPackageAsset;
 using Knapcode.ExplorePackages.Worker.FindPackageFile;
+using Knapcode.ExplorePackages.Worker.FindPackageItem;
 using Knapcode.ExplorePackages.Worker.FindPackageManifest;
 using Knapcode.ExplorePackages.Worker.FindPackageSignature;
 using Microsoft.Extensions.DependencyInjection;
@@ -62,6 +63,8 @@ namespace Knapcode.ExplorePackages.Worker
                     return _serviceProvider.GetRequiredService<CatalogLeafScanToCsvAdapter<PackageAssembly>>();
                 case CatalogScanDriverType.FindPackageAsset:
                     return _serviceProvider.GetRequiredService<CatalogLeafScanToCsvAdapter<PackageAsset>>();
+                case CatalogScanDriverType.FindPackageItem:
+                    return _serviceProvider.GetRequiredService<CatalogLeafScanToCsvAdapter<PackageItem>>();
                 case CatalogScanDriverType.FindPackageSignature:
                     return _serviceProvider.GetRequiredService<CatalogLeafScanToCsvAdapter<PackageSignature>>();
                 default:
