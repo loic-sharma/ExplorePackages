@@ -5,6 +5,7 @@ using Knapcode.ExplorePackages.Worker.FindCatalogLeafItem;
 using Knapcode.ExplorePackages.Worker.FindLatestPackageLeaf;
 using Knapcode.ExplorePackages.Worker.FindPackageAssembly;
 using Knapcode.ExplorePackages.Worker.FindPackageAsset;
+using Knapcode.ExplorePackages.Worker.FindPackageItem;
 using Knapcode.ExplorePackages.Worker.FindPackageSignature;
 using Knapcode.ExplorePackages.Worker.RunRealRestore;
 using Knapcode.ExplorePackages.Worker.StreamWriterUpdater;
@@ -30,6 +31,7 @@ namespace Knapcode.ExplorePackages.Worker
             new SchemaV1<CsvCompactMessage<CatalogLeafItemRecord>>("cc.fcli"),
             new SchemaV1<CsvCompactMessage<PackageAsset>>("cc.fpa"),
             new SchemaV1<CsvCompactMessage<PackageAssembly>>("cc.fpi"),
+            new SchemaV1<CsvCompactMessage<PackageItem>>("cc.fpit"),
             new SchemaV1<CsvCompactMessage<PackageSignature>>("cc.fps"),
 
             new SchemaV1<TableScanMessage<CatalogLeafScan>>("ts.cls"),
